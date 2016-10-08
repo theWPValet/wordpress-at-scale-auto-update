@@ -20,7 +20,7 @@ This script will:
 	* If discrepencies are found the script will fail and report the error to Slack
 10. Merge the multidev environment with the dev environment
 11. Deploy the dev environment to the test environment
-12. Deploy the test environment to the live environment
+12. Deploy the test environm	ent to the live environment
 13. Post a success message to Slack
 
 ## License ##
@@ -36,7 +36,7 @@ This script will:
 	* `SLACK_USERNAME`: The username to post to Slack with
 3. Add an [SSH key to Pantheon](https://pantheon.io/docs/ssh-keys/) and [to the CircleCI project](https://circleci.com/docs/permissions-and-access-during-deployment/).
 4. Update the site UUID in the `.env` file
-5. Update _scenarios_ in `backstop.js` with URLs for pages you wish to check with visual regression
+5. Update _scenarios_ in `backstop.json` with URLs for pages you wish to check with visual regression
 	* `url` refers to the live URL and `referenceUrl` refers to the same page on the Pantheon multidev environment
 6. Ping the [CircleCI API](https://circleci.com/docs/api/) at the desired frequency, e.g. daily, to run the script
 
