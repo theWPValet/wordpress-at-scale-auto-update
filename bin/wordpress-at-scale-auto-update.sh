@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MULTIDEV="update-wp"
+MULTIDEV="updates"
 
 UPDATES_APPLIED=false
 
@@ -94,7 +94,7 @@ else
 
     # ping the multidev environment to wake it from sleep
     echo -e "\nPinging the ${MULTIDEV} multidev environment to wake it from sleep..."
-    curl -I https://update-wp-wp-microsite.pantheonsite.io/
+    curl -I http://updates-valet.sites.thewpvalet.com
 
     # backstop visual regression
     echo -e "\nRunning BackstopJS tests..."
