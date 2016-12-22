@@ -5,11 +5,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ataylorme/wordpress-at-scale-auto-update.git"
+    "url": "git+https://github.com/theWPValet/wordpress-at-scale-auto-update.git"
   },
-  "author": "Andrew Taylor",
+  "author": "Mason James",
   "bugs": {
-    "url": "https://github.com/ataylorme/wordpress-at-scale-auto-update/issues"
+    "url": "https://github.com/theWPValet/wordpress-at-scale-auto-update/issues"
   },
   "devDependencies": {
     "backstopjs": "^1.3.5"
