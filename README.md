@@ -6,13 +6,13 @@ Automate WordPress core, plugin and theme updates on [Pantheon](https://pantheon
 This script will:
 
 1. Authenticate with [Terminus](https://github.com/pantheon-systems/terminus) via machine token
-2. Delete the multidev environment `update-wp`
-3. Recreate the multidev environment `update-wp`
+2. Delete the multidev environment `updates`
+3. Recreate the multidev environment `udpates`
 	* Deletion and recreation is done to clear any existing changes and pull the latest database/files from the live environment 
-4. Switch the multidev environment `update-wp` to Git mode
+4. Switch the multidev environment `udpates` to Git mode
 5. [Apply Pantheon upstream updates](https://pantheon.io/docs/upstream-updates/)
 	* WordPress core updates are managed in the upstream
-6. Switch the multidev environment `update-wp` to SFTP mode
+6. Switch the multidev environment `udpates` to SFTP mode
 7. Check for and apply WordPress plugin updates via [WP-CLI](http://wp-cli.org/), if available
 8. Check for and apply WordPress theme updates via [WP-CLI](http://wp-cli.org/), if available
 	* If no WordPress updates are available the script will complete and report the Slack
