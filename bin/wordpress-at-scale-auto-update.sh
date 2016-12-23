@@ -107,6 +107,9 @@ else
     VISUAL_REGRESSION_RESULTS=$(npm run test)
 
     echo "${VISUAL_REGRESSION_RESULTS}"
+    
+    echo "Rsyncing Backstop results to artifacts directory"
+     +    rsync  -rlvz   /home/ubuntu/wordpress-at-scale-auto-update/backstop_data $CIRCLE_ARTIFACTS/backstop
 
     cd -
     if [[ ${VISUAL_REGRESSION_RESULTS} == *"Mismatch errors found"* ]]
