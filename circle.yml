@@ -17,16 +17,16 @@ dependencies:
   pre:
 
     # Install gulp
-    - echo Installing gulp globally
+    - echo Installing gulp and pa11y globally
     - npm install -g gulp
+    - npm install -g pa11y    
 
+  override:
     # Install Terminus
     - sudo curl https://github.com/pantheon-systems/terminus/releases/download/0.13.6/terminus.phar -L -o /usr/local/bin/terminus
     - sudo chmod +x /usr/local/bin/terminus
 
-  override:
-    - ./bin/wordpress-at-scale-auto-update.sh
-
 test:
   override:
-    - ls
+    - ./bin/wordpress-at-scale-auto-update.sh
+    - pa11y --standard Section508 http://updates-valet.sites.thewpvalet.com
