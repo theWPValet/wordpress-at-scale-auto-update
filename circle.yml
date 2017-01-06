@@ -17,9 +17,8 @@ dependencies:
   pre:
 
     # Install gulp
-    - echo Installing gulp and pa11y globally
+    - echo Installing gulp
     - npm install -g gulp
-    - npm install -g pa11y    
 
   override:
     # Install Terminus
@@ -29,4 +28,3 @@ dependencies:
 test:
   override:
     - ./bin/wordpress-at-scale-auto-update.sh
-    - pa11y --standard Section508 http://updates-valet.sites.thewpvalet.com
