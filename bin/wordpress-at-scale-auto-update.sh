@@ -99,12 +99,12 @@ else
     # backstop visual regression
     echo -e "\nRunning BackstopJS tests..."
 
-    cd node_modules/backstopjs
+    cwd=$(pwd)
+    export PATH="$(pwd)/node_modules/.bin:$PATH"
 
-    npm run reference --configPath=../../backstop-settings.js --refhost=${REF_HOST} --paths=${REF_PATHS}
-    # npm run test
+    backstop reference --configPath=backstop-settings.js --refhost=${REF_HOST} --paths=${REF_PATHS}
 
-    VISUAL_REGRESSION_RESULTS=$(npm run test --configPath=../../backstop-settings.js --testhost=${TEST_HOST} --paths=${TEST_PATHS})
+    VISUAL_REGRESSION_RESULTS=$(backstop test --configPath=backstop-settings.js --testhost=${TEST_HOST} --paths=${TEST_PATHS})
 
     echo "${VISUAL_REGRESSION_RESULTS}"
     
