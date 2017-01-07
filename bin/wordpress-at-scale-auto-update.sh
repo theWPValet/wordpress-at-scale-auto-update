@@ -2,7 +2,7 @@
 
 MULTIDEV="updates"
 
-UPDATES_APPLIED=false
+UPDATES_APPLIED=true
 
 # login to Terminus
 echo -e "\nLogging into Terminus..."
@@ -84,7 +84,7 @@ then
     echo -e "\nNo updates to apply..."
     SLACK_MESSAGE="valet.io Circle CI update check #${CIRCLE_BUILD_NUM} by ${CIRCLE_PROJECT_USERNAME}. No updates to apply, nothing deployed."
     echo -e "\nSending a message to the ${SLACK_CHANNEL} Slack channel"
-    curl -X POST --data "payload={\"channel\": \"${SLACK_CHANNEL}\", \"username\": \"${SLACK_USERNAME}\", \"text\": \"${SLACK_MESSAGE}\"}" $SLACK_HOOK_URL
+    # curl -X POST --data "payload={\"channel\": \"${SLACK_CHANNEL}\", \"username\": \"${SLACK_USERNAME}\", \"text\": \"${SLACK_MESSAGE}\"}" $SLACK_HOOK_URL
 else
     # updates applied, carry on
 
@@ -118,7 +118,7 @@ else
         echo -e "\nVisual regression tests failed! Please manually check the ${MULTIDEV} multidev..."
         SLACK_MESSAGE="valet.io Circle CI update check #${CIRCLE_BUILD_NUM} by ${CIRCLE_PROJECT_USERNAME}. Visual regression tests failed on <https://dashboard.pantheon.io/sites/${SITE_UUID}#${MULTIDEV}/code|the ${MULTIDEV} environment>! Please test manually."
         echo -e "\nSending a message to the ${SLACK_CHANNEL} Slack channel"
-        curl -X POST --data "payload={\"channel\": \"${SLACK_CHANNEL}\", \"username\": \"${SLACK_USERNAME}\", \"text\": \"${SLACK_MESSAGE}\"}" $SLACK_HOOK_URL
+        # curl -X POST --data "payload={\"channel\": \"${SLACK_CHANNEL}\", \"username\": \"${SLACK_USERNAME}\", \"text\": \"${SLACK_MESSAGE}\"}" $SLACK_HOOK_URL
         exit 1
     else
         # visual regression passed
@@ -147,6 +147,6 @@ else
         echo -e "\nVisual regression tests passed! WordPress updates deployed to live..."
         SLACK_MESSAGE="valet.io Circle CI update check #${CIRCLE_BUILD_NUM} by ${CIRCLE_PROJECT_USERNAME} Visual regression tests passed! WordPress updates deployed to <https://dashboard.pantheon.io/sites/${SITE_UUID}#live/deploys|the live environment>."
         echo -e "\nSending a message to the ${SLACK_CHANNEL} Slack channel"
-        curl -X POST --data "payload={\"channel\": \"${SLACK_CHANNEL}\", \"username\": \"${SLACK_USERNAME}\", \"text\": \"${SLACK_MESSAGE}\"}" $SLACK_HOOK_URL
+        # curl -X POST --data "payload={\"channel\": \"${SLACK_CHANNEL}\", \"username\": \"${SLACK_USERNAME}\", \"text\": \"${SLACK_MESSAGE}\"}" $SLACK_HOOK_URL
     fi
 fi
