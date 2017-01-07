@@ -22,7 +22,7 @@ dependencies:
 
   override:
     # Install Terminus
-    - sudo curl -O https://github.com/pantheon-systems/terminus/releases/download/0.13.6/terminus.phar -L -o /usr/local/bin/terminus
+    - sudo curl https://github.com/pantheon-systems/terminus/releases/download/0.13.6/terminus.phar -L -o /usr/local/bin/terminus
     - sudo chmod +x /usr/local/bin/terminus
 
 test:
