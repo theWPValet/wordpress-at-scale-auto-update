@@ -94,17 +94,17 @@ else
 
     # ping the multidev environment to wake it from sleep
     echo -e "\nPinging the ${MULTIDEV} multidev environment to wake it from sleep..."
-    curl -I http://updates-valet.sites.thewpvalet.com
+    curl -I ${REF_HOST}
 
     # backstop visual regression
     echo -e "\nRunning BackstopJS tests..."
 
     cd node_modules/backstopjs
 
-    npm run reference
+    npm run reference --configPath=backstop-settings.js --refhost=${REF_HOST} --paths=${REF_PATHS}
     # npm run test
 
-    VISUAL_REGRESSION_RESULTS=$(npm run test)
+    VISUAL_REGRESSION_RESULTS=$(npm run test --configPath=backstop-settings.js --testhost=${TEST_HOST} --paths=${TEST_PATHS})
 
     echo "${VISUAL_REGRESSION_RESULTS}"
     

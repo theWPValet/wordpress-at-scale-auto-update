@@ -16,9 +16,10 @@ dependencies:
 
   pre:
 
-    # Install gulp
+    # Install gulp, minimist
     - echo Installing gulp
     - npm install -g gulp
+    - npm install minimist
 
   override:
     # Install Terminus
