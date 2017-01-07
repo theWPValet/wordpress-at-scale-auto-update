@@ -3,7 +3,7 @@ machine:
     America/Chicago
 
   node:
-    version: 4.4.7
+    version: 4.7.1
 
   php:
       version: 7.0.4
@@ -11,8 +11,8 @@ machine:
 dependencies:
   cache_directories:
     - ~/node_modules
-    - /home/ubuntu/nvm/versions/node/4.4.7/bin
-    - /home/ubuntu/nvm/versions/node/4.4.7/lib/node_modules
+    - /home/ubuntu/nvm/versions/node/4.7.1/bin
+    - /home/ubuntu/nvm/versions/node/4.7.1/lib/node_modules
 
   pre:
 
