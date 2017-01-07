@@ -12,6 +12,7 @@
     "url": "https://github.com/theWPValet/wordpress-at-scale-auto-update/issues"
   },
   "devDependencies": {
-    "backstopjs": "^2.3.5"
+    "backstopjs": "^2.3.5",
+    "minimist": "^1.2.0"
   }
 }
